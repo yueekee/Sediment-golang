@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 /* copy函数
-	p.s. 使用char1[0:n]也可以实现这种方法
+p.s. 使用char1[0:n]也可以实现这种方法
 */
 
 func main() {
@@ -15,5 +15,5 @@ func main() {
 	fmt.Println("char1:", char1)
 	fmt.Printf("char1:%p\n", char1)
 	fmt.Println("char2:", char2)
-	fmt.Printf("char2:%p\n", char2)		// 不同地址
+	fmt.Printf("char2:%p\n", char2) // 不同地址
 }

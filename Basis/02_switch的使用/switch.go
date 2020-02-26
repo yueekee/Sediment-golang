@@ -3,17 +3,17 @@ package main
 import "fmt"
 
 /* 总结：
-	switch有2中用法：
-		1.switch{
-			case 条件1：
-				条件语句1
-			}
-		2.switch 条件语句{
-			case 条件语句对应的值1：
-				代码1
-			}
+switch有2中用法：
+	1.switch{
+		case 条件1：
+			条件语句1
+		}
+	2.switch 条件语句{
+		case 条件语句对应的值1：
+			代码1
+		}
 
-	这里有个问题：输入金额为-09时，金额为0，感觉是取值只能拿到一位数。
+这里有个问题：输入金额为-09时，金额为0，感觉是取值只能拿到一位数。
 */
 func main() {
 	var money int
@@ -37,7 +37,7 @@ func main() {
 		}
 	}
 
-/*	for {
+	/*	for {
 		fmt.Println("输入金额")
 		fmt.Scan(&money)
 		if money >= 4000 {
