@@ -17,6 +17,7 @@ func main() {
 
 	for {
 		conn, _ := listener.Accept()
+		fmt.Println("创建了conn")
 		go func() {
 			defer conn.Close()
 			buf := make([]byte, 1024)
