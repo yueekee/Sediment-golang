@@ -10,7 +10,7 @@ func main() {
 	go user1()
 	go user2()
 	for {
-
+		;
 	}
 }
 

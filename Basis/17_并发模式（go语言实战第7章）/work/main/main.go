@@ -15,6 +15,7 @@ var names = []string{
 	"jason",
 }
 
+// namePrinter 使用特定方法打印名字
 type namePrinter struct {
 	name 	string
 }
