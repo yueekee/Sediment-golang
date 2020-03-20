@@ -23,14 +23,9 @@ func live() People {
 
 func main() {
 	fmt.Println(live())
-	fmt.Println(live() == nil)
+	fmt.Println(live() == nil)	// false
 	fmt.Println(in)
-	fmt.Println(in == nil)
-	if live() == nil {
-		fmt.Println("AAAAAAA")
-	} else {
-		fmt.Println("BBBBBBB")
-	}
+	fmt.Println(in == nil)		// true
 }
 
 /* interface内部结构
