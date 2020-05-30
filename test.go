@@ -7,7 +7,7 @@ type ConfigOne struct {
 }
 
 func (c *ConfigOne) String() string {
-	return fmt.Sprintf("print: %v", p)
+	return fmt.Sprintf("print: %v", c.String())
 }
 
 func main() {
