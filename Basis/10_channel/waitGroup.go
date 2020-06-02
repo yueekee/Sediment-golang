@@ -20,6 +20,7 @@ func main() {
 			fmt.Println(i)
 			wg.Done()
 		}(&waitGroup, i)
+		fmt.Printf()
 	}
 	waitGroup.Wait()
 }

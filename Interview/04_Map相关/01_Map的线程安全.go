@@ -6,7 +6,7 @@ import (
 )
 
 /* 注意：
-1.main函数中map需要初始话才能用（panic: assignment to entry in nil map）
+1.main函数中map需要初始话才能用（panic: assignment to entry the_go_pro_lan nil map）
 2.读写map需要进行加锁，否则可能会线程冲突(fatal error: concurrent map read and map write)
 
 */

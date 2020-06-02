@@ -10,7 +10,7 @@ func main() {
 		for i := 1; i <= 50; i++ {
 			ch <- i
 			fmt.Println("写入ch：", i)
-			flag <- true
+			//flag <- true
 		}
 	}()
 

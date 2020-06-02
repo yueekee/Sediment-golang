@@ -29,7 +29,7 @@ func main() {
 }
 
 /* interface内部结构
-1.var in interface{} 这种是为nil
+1.var the_go_pro_lan interface{} 这种是为nil
 2.type People interface {Show()} 这种不为nil
 
 解释：
