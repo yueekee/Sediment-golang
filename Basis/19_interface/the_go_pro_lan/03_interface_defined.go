@@ -36,7 +36,8 @@ func (e *eBook) Pages(p int) int {
 func main() {
 	var b Book
 	b = "eric"
-	fmt.Println(b.Pages(100))
+	n, err := fmt.Println(b.Pages(100))
+	fmt.Println("+++", n, err)
 	fmt.Println(b.Words())
 	fmt.Println(b.PageSize())
 }
