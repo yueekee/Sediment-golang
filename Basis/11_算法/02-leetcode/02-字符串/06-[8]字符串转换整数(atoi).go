@@ -82,7 +82,6 @@ func myAtoi(str string) int {
 	} else if s[0] == '+'{
 		s = s[1:]
 	}
-	fmt.Println("s:", s)
 
 	for _, v := range s {
 		if v > '9' || v < '0' {
@@ -94,11 +93,7 @@ func myAtoi(str string) int {
 		} else if  n*sign < math.MinInt32 {
 			return math.MinInt32
 		}
-		fmt.Println("++++n:", n)
 	}
-	fmt.Println("n:", n)
-	fmt.Println("sign:", sign)
-
 
 	return n * sign
 }
