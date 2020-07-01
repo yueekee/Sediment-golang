@@ -20,6 +20,6 @@ func main() {
 	list = make(map[string]Test)
 	name := Test{"xiaoming"}
 	list["name"] = name
-	list["name"].Name = "Hello"
+	//list["name"].Name = "Hello"
 	fmt.Println(list["name"])
 }
