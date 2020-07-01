@@ -12,8 +12,8 @@ func main1() {
 	m := map[string]Person{
 		"zhangsan": Person{Age: 20},
 	}
-	m["zhangsan"].Age = 23
-	m["zhangsan"].GrowUp()
+	//m["zhangsan"].Age = 23
+	//m["zhangsan"].GrowUp()
 
 	p := m["zhangsan"]
 	p.Age = 23
