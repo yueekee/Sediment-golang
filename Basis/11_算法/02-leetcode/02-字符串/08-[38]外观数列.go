@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"strconv"
+)
+
 //给定一个正整数 n（1 ≤ n ≤ 30），输出外观数列的第 n 项。
 //
 // 注意：整数序列中的每一项将表示为一个字符串。
@@ -42,7 +47,32 @@ package main
 
 //leetcode submit region begin(Prohibit modification and deletion)
 func countAndSay(n int) string {
-
+	// 计算连着的数字有几个
+	// 采用递归
+	if n == 1 {
+		return "1"
+	} else if n == 2 {
+		return "11"
+	}
+	s := countAndSay(n - 1)
+	count := 1
+	r := ""
+	for i := 1; i <= len(s)-1; i++ {
+		if s[i-1] != s[i] {
+			r += strconv.Itoa(count) + string(s[i-1])
+			count = 1
+			fmt.Println("s[i] != s[i+1]的r：", r)
+		} else {
+			count ++
+		}
+		if i == len(s) - 1 {
+			r += strconv.Itoa(count) + string(s[i])
+			fmt.Println("队尾r：", r)
+			s = r
+			return s
+		}
+	}
+	return s
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
@@ -54,6 +84,7 @@ func main() {
 	n=3, 21
 	n=4, 1211
 	n=5, 111221
-
 	*/
+	n := 11
+	fmt.Println(countAndSay(n))
 }
