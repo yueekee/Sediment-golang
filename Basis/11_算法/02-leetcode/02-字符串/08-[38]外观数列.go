@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strconv"
 )
 
@@ -55,36 +56,40 @@ func countAndSay(n int) string {
 		return "11"
 	}
 	s := countAndSay(n - 1)
+	fmt.Printf("++++n:%v, s:%v\n", n, s)
 	count := 1
 	r := ""
+	/*
+	这里为什么要从i := 1开始？
+	是因为i++是在一次循环完成之后才进行执行的，如果i从0开始，if i == len(s) - 1的判断就有问题
+	*/
 	for i := 1; i <= len(s)-1; i++ {
 		if s[i-1] != s[i] {
 			r += strconv.Itoa(count) + string(s[i-1])
 			count = 1
-			fmt.Println("s[i] != s[i+1]的r：", r)
+			fmt.Println("----s[i] != s[i+1]的r：", r)
 		} else {
 			count ++
 		}
 		if i == len(s) - 1 {
 			r += strconv.Itoa(count) + string(s[i])
-			fmt.Println("队尾r：", r)
+			fmt.Println("----队尾r：", r)
 			s = r
 			return s
 		}
 	}
 	return s
 }
-//leetcode submit region end(Prohibit modification and deletion)
+//leetcode submit region end(Proh		ibit modification and deletion)
 
-
-func main() {
-	/*
+/*
 	n=1, 1
 	n=2, 11
-	n=3, 21
+	n=3, 21X
 	n=4, 1211
 	n=5, 111221
-	*/
-	n := 11
+*/
+func main() {
+	n, _ := strconv.Atoi(os.Args[1])
 	fmt.Println(countAndSay(n))
 }
