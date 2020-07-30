@@ -17,6 +17,8 @@ func main() {
 	trimLeft := strings.TrimLeft(body, "msg=")
 	fmt.Println("trim:", trimLeft)  // trim: http%3A%2F%2Flocalhost%3A9999%2F%26a%3D12
 
+	escape := url.QueryEscape("http://localhost:9999/&a=12")
+	fmt.Println("escape:", escape)
 	// url decode
 	m, _ := url.ParseQuery(body)
 	fmt.Println("m:", m["msg"][0])  // m: map[msg:[http://localhost:9999/&a=12]]
