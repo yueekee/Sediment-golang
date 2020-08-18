@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"strconv"
 	"time"
 )
 
@@ -16,4 +17,9 @@ func main() {
 	for i := 1; i <= 5; i++ {
 		fmt.Println(rand.Intn(100))
 	}
+
+	unix := strconv.FormatInt(time.Now().Unix(), 10)
+	fmt.Println("unix:", unix)
+	p := unix + strconv.Itoa(rand.Intn(10)) + strconv.Itoa(rand.Intn(10)) + strconv.Itoa(rand.Intn(10))
+	fmt.Println("p:", p)
 }
