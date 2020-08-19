@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -20,4 +21,12 @@ func main() {
 
 	info = "https://static.chuanghehui.com/xcxmatrix/gongkaike/" + splitUrl[len(splitUrl)-1]
 	fmt.Println("+++++info", info)
+
+	fileName := "activity105_202008191400.xlsx"
+	path := os.Getenv("GOPATH") + "/src/xcxapi/assets/activityCenter/" + fileName
+	errFilePath := strings.Replace(path, ".xlsx", "_err.xlsx", -1)
+	fmt.Println("errFilePath", errFilePath)
+	errFilePath = strings.TrimPrefix(errFilePath, os.Getenv("GOPATH")+"/src/xcxapi")
+	fmt.Println("errFilePath2", errFilePath)
+
 }
