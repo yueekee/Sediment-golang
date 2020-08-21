@@ -15,6 +15,9 @@ func main() {
 	fmt.Println(sub.Seconds())
 	fmt.Println("___________")
 
+	// 3天前
+	add := t.Add(-time.Hour * 24 * 3)
+	fmt.Println("++add", add)
 
 	startTime := "1970-01-01 00:00:00"
 	parse, _ := time.Parse("2006-01-02 15:04:05", startTime) // 格式要求比较高
