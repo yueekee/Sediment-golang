@@ -1,0 +1,31 @@
+{
+  "db": {
+    "user": "root",
+    "password": "T3G0xIqpFkFly+keELZozQ==",
+    "url": "tcp(127.0.0.1:3306)/juha_web?charset=utf8mb4&parseTime=True&loc=Local",
+    "log": true
+  },
+  "http": {
+    "port": "3500"
+  },
+  "upload": {
+    "dir": "../upload",
+    "interval": "60s",
+    "updateInterval": "30s"
+  },
+  "repository": {
+    "address": "http://localhost:3332",
+    "templatesUrl": "/api/templates",
+    "scriptsUrl": "/api/scripts",
+    "snapshotsUrl": "/api/snapshots",
+    "configUrl": "/api/config"
+  },
+  "recover": {
+    "interval": 15,
+    "count":3
+  },
+  "auth": {
+    "passport_addr": "http://100.73.20.50:3336",
+    "local_addr": "http://100.73.20.50:3337"
+  }
+}

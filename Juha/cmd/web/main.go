@@ -1,8 +1,15 @@
 package main
 
-import "github.com/liankui/Sediment-golang/Juha/cmd/web/server"
+import (
+	"flag"
+	"log"
+)
 
 func main() {
-	var h server.HttpServer
-	h.Init()
+	configPath := flag.String("c", "../config/config.json", "configuration file")
+
+	flag.Parse()
+	log.Println("configPath:", *configPath)
+	//router := initRouter.SetupRouter()
+	//router.Run()
 }
