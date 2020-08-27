@@ -11,6 +11,13 @@ func (c *ConfigOne) String() string {
 }
 
 func main() {
-	c := &ConfigOne{}
-	c.String()
+	//c := &ConfigOne{}
+	//c.String()
+
+	status := 1	// 0001
+	num := 2 // 0010  3-> 0011
+	if true {
+		num |= status
+	}
+	fmt.Println("num:", num)
 }
