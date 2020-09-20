@@ -113,6 +113,7 @@ func reorderSpaces(text string) string {
 		return split[0] + strings.Repeat(" ", num)
 	}
 
+
 	preSpace := strings.Repeat(" ", num/(len(split)-1))
 	leftSpace := strings.Repeat(" ", num%(len(split)-1))
 
