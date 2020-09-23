@@ -26,67 +26,67 @@ func main() {
 	fmt.Println(spaces)
 }
 
-// func reorderSpaces1(text string) string {
-// 	fmt.Println("len(text):", len(text))
-// 	trimSpace := strings.TrimSpace(text)
-// 	if trimSpace == "" {
-// 		fmt.Println("newText1:", len(text))
-// 		return text
-// 	}
+func reorderSpaces1(text string) string {
+	fmt.Println("len(text):", len(text))
+	trimSpace := strings.TrimSpace(text)
+	if trimSpace == "" {
+		fmt.Println("newText1:", len(text))
+		return text
+	}
 
-// 	num := 0
-// 	for i := 0; i < len(text); i++ {
-// 		if text[i] == ' ' {
-// 			num++
-// 		}
-// 	}
-// 	fmt.Println("num:", num)
+	num := 0
+	for i := 0; i < len(text); i++ {
+		if text[i] == ' ' {
+			num++
+		}
+	}
+	fmt.Println("num:", num)
 
-// 	split := strings.Split(text, " ")
-// 	for i := 0; i < len(split); i++ {
-// 		if split[i] == "" {
-// 			if i == len(split)-1 {
-// 				split = split[:len(split)-1]
-// 			} else {
-// 				split = append(split[:i], split[i+1:]...)
-// 			}
-// 			i--
-// 		}
-// 	}
+	split := strings.Split(text, " ")
+	for i := 0; i < len(split); i++ {
+		if split[i] == "" {
+			if i == len(split)-1 {
+				split = split[:len(split)-1]
+			} else {
+				split = append(split[:i], split[i+1:]...)
+			}
+			i--
+		}
+	}
 
-// 	newText := ""
-// 	if len(split) == 1 {
-// 		newText = split[0]
-// 		for i := 0; i < num; i++ {
-// 			newText += " "
-// 		}
-// 		fmt.Println("newText2:", len(newText))
-// 		return newText
-// 	}
+	newText := ""
+	if len(split) == 1 {
+		newText = split[0]
+		for i := 0; i < num; i++ {
+			newText += " "
+		}
+		fmt.Println("newText2:", len(newText))
+		return newText
+	}
 
-// 	preSpaceNum := num / (len(split) - 1)
-// 	leftNum := num % (len(split) - 1)
-// 	fmt.Println("preSpaceNum:", preSpaceNum)
-// 	fmt.Println("leftNum:", leftNum)
+	preSpaceNum := num / (len(split) - 1)
+	leftNum := num % (len(split) - 1)
+	fmt.Println("preSpaceNum:", preSpaceNum)
+	fmt.Println("leftNum:", leftNum)
 
-// 	for i, s := range split {
-// 		newText += s
-// 		if i == len(split) - 1 {
-// 			continue
-// 		}
-// 		for i := 0; i < preSpaceNum; i++ {
-// 			newText += " "
-// 		}
-// 	}
-// 	for i := 0; i < leftNum; i++ {
-// 		newText += " "
-// 	}
+	for i, s := range split {
+		newText += s
+		if i == len(split) - 1 {
+			continue
+		}
+		for i := 0; i < preSpaceNum; i++ {
+			newText += " "
+		}
+	}
+	for i := 0; i < leftNum; i++ {
+		newText += " "
+	}
 
-// 	fmt.Println("newText3:", len(newText))
+	fmt.Println("newText3:", len(newText))
 
-// 	return newText
+	return newText
 
-// }
+}
 
 func reorderSpaces(text string) string {
 	trimSpace := strings.TrimSpace(text)
