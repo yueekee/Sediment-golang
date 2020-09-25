@@ -17,7 +17,7 @@ func NewSingleNodeList() *SingleNodeList {
 	return &SingleNodeList{}
 }
 
-func (list *SingleNodeList) AddOneNodeAtTheLast(value int) {
+func (list *SingleNodeList) AddTheLastNode(value int) {
 	newNode := new(SingleNode)
 	newNode.Data = value
 
@@ -38,7 +38,7 @@ func (list *SingleNodeList) AddOneNodeAtTheLast(value int) {
 
 // 最后一个节点 = nil
 // 原链表的last = nil，倒数第二个node->nil
-func (list *SingleNodeList) DeleteOneNodeAtTheLast() {
+func (list *SingleNodeList) DeleteTheLastNode() {
 	if list.Size == 0 {
 		return
 	} else if list.Size == 1 {
@@ -65,6 +65,20 @@ func (list *SingleNodeList) DeleteOneNodeAtTheLast() {
 	list.Size -= 1
 }
 
+func (list *SingleNodeList) AddTheFirstNode(value int) {
+	newNode := new(SingleNode)
+	newNode.Data = value
+
+	if list.Size == 0 {
+		list.First = newNode
+		list.Last = newNode
+	} else {
+		newNode.Next = list.First
+		list.First = newNode
+	}
+	list.Size += 1
+}
+
 func (list *SingleNodeList) PrintNodeList() {
 	currentNode := list.First
 	fmt.Print(currentNode.Data, ",")
@@ -75,15 +89,16 @@ func (list *SingleNodeList) PrintNodeList() {
 		currentNode = currentNode.Next
 		fmt.Print(currentNode.Data, ",")
 	}
+	fmt.Println("---")
 }
 
 func main() {
 	nodeList := NewSingleNodeList()
-	nodeList.AddOneNodeAtTheLast(1)
-	nodeList.AddOneNodeAtTheLast(4)
-	nodeList.AddOneNodeAtTheLast(2)
-	nodeList.PrintNodeList()
-	nodeList.AddOneNodeAtTheLast(8)
+	nodeList.AddTheLastNode(10)
+	nodeList.AddTheLastNode(11)
+	nodeList.AddTheLastNode(12)
+	//nodeList.PrintNodeList()
+	nodeList.AddTheFirstNode(9)
 	nodeList.PrintNodeList()
 
 }
