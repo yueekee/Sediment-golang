@@ -79,6 +79,15 @@ func (list *SingleNodeList) AddTheFirstNode(value int) {
 	list.Size += 1
 }
 
+func (list *SingleNodeList) DeleteTheFirstNode() {
+	if list.Size == 0 {
+		return
+	}
+
+	list.First = list.First.Next
+	list.Size -= 1
+}
+
 func (list *SingleNodeList) PrintNodeList() {
 	currentNode := list.First
 	fmt.Print(currentNode.Data, ",")
@@ -99,6 +108,7 @@ func main() {
 	nodeList.AddTheLastNode(12)
 	//nodeList.PrintNodeList()
 	nodeList.AddTheFirstNode(9)
+	nodeList.DeleteTheFirstNode()
 	nodeList.PrintNodeList()
 
 }
