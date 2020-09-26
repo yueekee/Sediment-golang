@@ -88,17 +88,21 @@ func (list *SingleNodeList) DeleteTheFirstNode() {
 	list.Size -= 1
 }
 
+func (list *SingleNodeList) AddOneNode(value, position int) {
+
+}
+
 func (list *SingleNodeList) PrintNodeList() {
 	currentNode := list.First
-	fmt.Print(currentNode.Data, ",")
+	fmt.Print(currentNode.Data, " ")
 	for i := 0; i < list.Size; i++ {
 		if currentNode.Next == nil {
+			fmt.Println()
 			return
 		}
 		currentNode = currentNode.Next
-		fmt.Print(currentNode.Data, ",")
+		fmt.Print(currentNode.Data, " ")
 	}
-	fmt.Println("---")
 }
 
 func main() {
@@ -106,8 +110,9 @@ func main() {
 	nodeList.AddTheLastNode(10)
 	nodeList.AddTheLastNode(11)
 	nodeList.AddTheLastNode(12)
-	//nodeList.PrintNodeList()
+	nodeList.PrintNodeList()
 	nodeList.AddTheFirstNode(9)
+	nodeList.PrintNodeList()
 	nodeList.DeleteTheFirstNode()
 	nodeList.PrintNodeList()
 
