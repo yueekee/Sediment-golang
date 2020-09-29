@@ -15,6 +15,7 @@ func main() {
 		fmt.Println("子go程")
 		ch <- true
 	}()
+
 	fmt.Println("主go程")
 	<-ch
 	fmt.Println("主go程11")
