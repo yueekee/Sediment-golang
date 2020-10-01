@@ -38,5 +38,6 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 
 	pre.Next = pre.Next.Next
 	return sentinel.Next
+
 }
 
