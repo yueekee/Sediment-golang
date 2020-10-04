@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点。传入函数的唯一参数为 要被删除的节点 。
 
@@ -12,7 +14,11 @@ package main
 */
 
 func main() {
-
+	node := NewListNode()
+	node.AddLastNode(1)
+	node.AddLastNode(2)
+	node.AddLastNode(3)
+	node.PrintListNode()
 }
 
 type ListNode struct {
@@ -24,4 +30,31 @@ type ListNode struct {
 func deleteNode(node *ListNode) {
 	node.Val = node.Next.Val
 	node.Next = node.Next.Next
+}
+
+// -------------------
+
+func NewListNode() *ListNode {
+	return &ListNode{}
+}
+
+func (node *ListNode) AddLastNode(val int) {
+	if node == nil {
+		node.Val = val
+		node.Next = nil
+		return
+	}
+
+	for node.Next != nil {
+		node = node.Next
+	}
+
+	node.Next.Val = val
+	node.Next.Next = nil
+}
+
+func (node *ListNode) PrintListNode() {
+	for node.Next == nil {
+		fmt.Println(node.Val, " ")
+	}
 }
