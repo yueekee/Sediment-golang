@@ -12,6 +12,12 @@ time包有几种格式：
 3.Duration 时间间隔 nanosecond 纳秒，格式为24h0m0s
 */
 
+// 使用一个结构封装time.Time可以转化带时区的时间为不带时区的时间
+// 例如：2020-09-30T16:47:06+08:00 -> 2020-09-30 16:47:06
+type JsonTime struct {
+	time.Time
+}
+
 func main() {
 	// time.Parse 将string->Time，并返回Time
 	startTimeString := "1970-01-01 00:00:00"
