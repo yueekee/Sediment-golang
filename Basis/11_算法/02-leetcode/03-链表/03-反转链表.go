@@ -21,7 +21,5 @@ func main() {
  */
 func reverseList(head *ListNode) *ListNode {
 
-
-
 }
 
