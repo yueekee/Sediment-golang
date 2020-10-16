@@ -10,12 +10,19 @@ import (
 )
 
 func main() {
-	xfiles, _ := getAllFiles("./../10-channel")
-	for _, file := range xfiles {
-		fmt.Printf("获取的文件为[%s]\n", file)
-	}
-	ZipFiles("channel.zip", xfiles)
+	//xfiles, _ := getAllFiles("./../10-channel")
+	//for _, file := range xfiles {
+	//	fmt.Printf("获取的文件为[%s]\n", file)
+	//}
+	//ZipFiles("channel.zip", xfiles)
 
+	//if err := os.Remove("10-channel"); err != nil {
+	//	fmt.Println("err:", err)
+	//}
+
+	if err := os.RemoveAll("channel*"); err != nil {
+		fmt.Println("err:", err)
+	}
 }
 
 func ZipFiles(filename string, files []string) error {
