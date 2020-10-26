@@ -17,7 +17,6 @@ func main() {
 		s := fmt.Sprintf("%03d", rand.Intn(1000))
 		fmt.Println(s)
 	}
-
 }
 
 
