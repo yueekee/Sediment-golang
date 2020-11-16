@@ -47,4 +47,5 @@ func GenerateCSV(filePath string, data [][]string) error {
 	}
 	w.Flush()
 	return err
+
 }
