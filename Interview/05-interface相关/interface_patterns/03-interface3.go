@@ -4,8 +4,8 @@ import (
 	"fmt"
 )
 
-// 建立一个接口，各个类型实现该接口
-// 再实现该接口的方法，建立好多态
+// 建立一个接口，各个类实现要该接口，就必须实现该接口中所有的方法
+// 注意：program to interface, not to implementation（即接口只做定义，不做实现）
 func main() {
 	d1 := Country3{"USA"}
 	d2 := City3{"Los Angeles"}
