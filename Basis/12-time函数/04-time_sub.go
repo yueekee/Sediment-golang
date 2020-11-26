@@ -38,6 +38,13 @@ func main() {
 	Time1, _ := time.ParseInLocation("2006-01-02 15:04:05", time1String, time.Local)
 	fmt.Println("Time1:", Time1)	// Time1: 2020-06-09 10:51:06 +0800 CST
 
+	// time.ParseInLocation 将string转化为当地的Time,并返回Time
+	s1 := "2020年06月09日"
+	str1 := s1[:4]+"-"+s1[7:9]+"-"+s1[12:14] // 中文一个字符对应3个字节
+	Time12, _ := time.ParseInLocation("2006-01-02", str1, time.Local) // Time12: 2020-06-09 00:00:00 +0800 CST
+	format := Time12.Format("2006-01-02")
+	fmt.Println("Time12:", format)	// Time12: 2020-06-09
+
 	// Time1.AddDate 增加天数
 	Time2 := Time1.AddDate(0, 0, 1)
 	fmt.Println("Time2:", Time2)	// Time2: 2020-06-10 10:51:06 +0800 CST
