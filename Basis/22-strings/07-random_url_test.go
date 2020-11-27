@@ -8,33 +8,13 @@ import (
 	"unsafe"
 )
 
+// Implementations
+
 func init() {
 	rand.Seed(time.Now().UnixNano())
 }
+
 var letterRunes = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
-const letterBytes = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-const (
-	letterIdxBits = 6                    // 6 bits to represent a letter index
-	letterIdxMask = 1<<letterIdxBits - 1 // All 1-bits, as many as letterIdxBits
-	letterIdxMax  = 63 / letterIdxBits   // # of letter indices fitting in 63 bits
-)
-
-var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
-
-func randSeq(n int) string {
-	l := len(letters)
-	b := make([]rune, n)
-	for i := range b {
-		b[i] = letters[rand.Intn(l)]
-	}
-	return string(b)
-}
-
-func BenchmarkUrl(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		randSeq(10)
-	}
-}
 
 func RandStringRunes(n int) string {
 	b := make([]rune, n)
@@ -43,6 +23,13 @@ func RandStringRunes(n int) string {
 	}
 	return string(b)
 }
+
+const letterBytes = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const (
+	letterIdxBits = 6                    // 6 bits to represent a letter index
+	letterIdxMask = 1<<letterIdxBits - 1 // All 1-bits, as many as letterIdxBits
+	letterIdxMax  = 63 / letterIdxBits   // # of letter indices fitting in 63 bits
+)
 
 func RandStringBytes(n int) string {
 	b := make([]byte, n)
@@ -55,7 +42,7 @@ func RandStringBytes(n int) string {
 func RandStringBytesRmndr(n int) string {
 	b := make([]byte, n)
 	for i := range b {
-		b[i] = letterBytes[rand.Int63() % int64(len(letterBytes))]
+		b[i] = letterBytes[rand.Int63()%int64(len(letterBytes))]
 	}
 	return string(b)
 }
@@ -128,7 +115,6 @@ func RandStringBytesMaskImprSrcSB(n int) string {
 	return sb.String()
 }
 
-// 9
 func RandStringBytesMaskImprSrcUnsafe(n int) string {
 	b := make([]byte, n)
 	// A src.Int63() generates 63 random bits, enough for letterIdxMax characters!
@@ -145,4 +131,55 @@ func RandStringBytesMaskImprSrcUnsafe(n int) string {
 	}
 
 	return *(*string)(unsafe.Pointer(&b))
+}
+
+// Benchmark functions
+
+const n = 16
+
+func BenchmarkRunes(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		RandStringRunes(n)
+	}
+}
+
+func BenchmarkBytes(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		RandStringBytes(n)
+	}
+}
+
+func BenchmarkBytesRmndr(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		RandStringBytesRmndr(n)
+	}
+}
+
+func BenchmarkBytesMask(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		RandStringBytesMask(n)
+	}
+}
+
+func BenchmarkBytesMaskImpr(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		RandStringBytesMaskImpr(n)
+	}
+}
+
+func BenchmarkBytesMaskImprSrc(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		RandStringBytesMaskImprSrc(n)
+	}
+}
+func BenchmarkBytesMaskImprSrcSB(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		RandStringBytesMaskImprSrcSB(n)
+	}
+}
+
+func BenchmarkBytesMaskImprSrcUnsafe(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		RandStringBytesMaskImprSrcUnsafe(n)
+	}
 }
