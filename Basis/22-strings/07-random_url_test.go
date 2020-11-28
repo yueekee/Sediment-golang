@@ -14,6 +14,7 @@ func init() {
 	rand.Seed(time.Now().UnixNano())
 }
 
+
 var letterRunes = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
 func RandStringRunes(n int) string {
