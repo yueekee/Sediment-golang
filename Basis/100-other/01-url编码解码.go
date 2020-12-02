@@ -28,4 +28,5 @@ func main() {
 	// url decode 2
 	unescape, _ := url.QueryUnescape(escape)
 	fmt.Println("un:", unescape) // un: http://localhost:9999/&a=12
+
 }
