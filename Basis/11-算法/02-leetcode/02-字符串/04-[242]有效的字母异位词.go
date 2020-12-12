@@ -39,7 +39,7 @@ func isAnagram1(s string, t string) bool {
 	}
 	// 比较两个数组是否相同
 	// 可以使用reflect进行比较，但是性能比较差
-	//equal := reflect.DeepEqual(byteArr1, byteArr2)
+	37//equal := reflect.DeepEqual(byteArr1, byteArr2)
 	equal := isSliceEqual(byteArr1, byteArr2)
 	return equal
 }
