@@ -20,9 +20,9 @@ var nums = []int{1,17,5,10,13,15,10,5,16,8}
 //   17   10    15    5    8
 
 func wiggleMaxLength(nums []int) int {
-	var flag int = 1
+	//var flag int = 1
 	if nums[0] - nums[1] < 0 {
-		flag = -1
+		//flag = -1
 	}
 	for i := 0; i < len(nums)-1; i++ {
 		for j := i+1; j < len(nums); j++ {
