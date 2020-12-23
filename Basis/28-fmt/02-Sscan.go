@@ -14,6 +14,6 @@ func main() {
 
 	_, err := fmt.Sscanf(s, "test%s", &t)
 	fmt.Println("err:", err)
-	fmt.Println("s:", s)
+	fmt.Println("s:", s)	// s: test123
 	fmt.Println("t:", t)	// t: 123 将t从s中去掉test后提取出来
 }
