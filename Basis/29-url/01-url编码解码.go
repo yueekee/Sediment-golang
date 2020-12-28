@@ -20,8 +20,9 @@ func main() {
 	m, _ := url.ParseQuery(body)
 	fmt.Println("m:", m["msg"][0]) // m: map[msg:[http://localhost:9999/&a=12]]
 
-	// ----------使用下面的encode\decode
 
+
+	// ----------使用下面的encode\decode
 	// url encode 2
 	escape := url.QueryEscape("http://localhost:9999/&a=12")
 	fmt.Println("escape:", escape) // escape: http%3A%2F%2Flocalhost%3A9999%2F%26a%3D12
