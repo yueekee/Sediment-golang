@@ -4,13 +4,21 @@ import "fmt"
 
 /* 总结：
 switch有2中用法：
-	1.switch{
+	1.switch {
 		case 条件1：
 			条件语句1
+		case 条件2：
+			条件语句2
+		default：
+			默认条件语句
 		}
 	2.switch 条件语句{
 		case 条件语句对应的值1：
 			代码1
+		case 条件语句对应的值2：
+			代码2
+		default：
+			默认代码
 		}
 
 这里有个问题：输入金额为-09时，金额为0，感觉是取值只能拿到一位数。

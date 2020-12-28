@@ -16,7 +16,7 @@ type Worker interface {
 }
 
 type Pool struct {
-	work 	chan 	Worker
+	work 	chan Worker
 	wg 		sync.WaitGroup
 }
 

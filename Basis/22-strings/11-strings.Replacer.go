@@ -11,7 +11,7 @@ func main() {
 	fixed := replacer.Replace(broken)
 	fmt.Println(fixed)	// Go rocko
 
-	broken = "G# r#1cks"
-	replace := strings.Replace(broken, "#", "o", 1)
-	fmt.Println(replace)
+	broken = "G# r#cks"
+	replace := strings.Replace(broken, "#", "o", 2)	// n 表示替换的次数
+	fmt.Println(replace)	// Go rocks
 }
