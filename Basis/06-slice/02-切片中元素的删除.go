@@ -6,9 +6,10 @@ func main() {
 	sli := []int{0,0,0,1,2,3,4,5,6,7,8,9}
 	n := 8
 	ints := RemoveParam(sli, n)
-	fmt.Println(ints)
+	fmt.Println(ints)	// [0 0 0 1 2 3 4 5 6 7 9]
 }
 
+// 删除指定元素
 func RemoveParam(sli []int, n int) []int {
 	for i := 0; i < len(sli); i++ {
 		if sli[i] == n {
