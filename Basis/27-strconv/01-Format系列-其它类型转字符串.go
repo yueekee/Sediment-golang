@@ -13,6 +13,7 @@ func main() {
 	idStr := strconv.FormatUint(ID, 10) // uint64 -> string, base表示进制
 	fmt.Println(idStr)
 	fmt.Println(reflect.TypeOf(idStr)) // string
+	fmt.Printf("%T\n", idStr)	// string
 	// 另一种方法
 	idStr = strconv.Itoa(int(ID))
 	fmt.Println(reflect.TypeOf(idStr)) // string
