@@ -1,3 +1,4 @@
+// Package Pool create.
 package pool
 
 import (
@@ -20,6 +21,7 @@ type Pool struct {
 
 var ErrPoolClosed = errors.New("pool has been closed")
 
+// NewPool return *Pool.
 func NewPool(fn func() (io.Closer, error), size uint) (*Pool, error) {
 	if size <= 0 {
 		return nil, errors.New("size value too small")

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/liankui/Sediment-golang/Advanced/05-并发模式（go语言实战第7章）/pool"
 	"io"
 	"log"
 	"math/rand"
@@ -8,7 +9,6 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/yueekee/Sediment-golang/Basis/17_并发模式（go语言实战第7章）/pool"
 )
 
 const (
