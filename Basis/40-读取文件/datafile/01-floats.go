@@ -1,4 +1,4 @@
-package main
+package datafile
 
 import (
 	"bufio"
@@ -7,16 +7,6 @@ import (
 	"os"
 	"strconv"
 )
-
-func main() {
-	//GetFile()
-	fileName := "data.txt"
-	num, err := GetFloats(fileName)
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println(num)
-}
 
 func GetFile() {
 	file, err := os.Open("data.txt")
@@ -36,27 +26,27 @@ func GetFile() {
 	}
 }
 
-func GetFloats(fileName string) ([3]float64, error) {
-	var num [3]float64
-	file, err := os.Open("data.txt")
+// 如果返回参数包含切片，如果程序出现错误，只需返回一个nil，而不是包含无效数据的切片。
+func GetFloats(fileName string) ([]float64, error) {
+	var numbers []float64
+	file, err := os.Open(fileName)
 	if err != nil {
-		return num, err
+		return nil, err
 	}
-	i := 0
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		num[i], err = strconv.ParseFloat(scanner.Text(), 64)
+		number, err := strconv.ParseFloat(scanner.Text(), 64)
 		if err != nil {
-			return num, err
+			return nil, err
 		}
-		i++
+		numbers = append(numbers, number)
 	}
 	err = file.Close()
 	if err != nil {
-		return num, err
+		return nil, err
 	}
 	if scanner.Err() != nil {
-		return num, scanner.Err()
+		return nil, scanner.Err()
 	}
-	return num, nil
+	return numbers, nil
 }
