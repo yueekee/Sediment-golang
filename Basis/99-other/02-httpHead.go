@@ -22,11 +22,12 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("header2:%+v\n", header2.Header["X-Errno"])
+	fmt.Printf("header2:%+v\n", header2.Header["X-Errno"])	// header2:[-6101]
+
 	t2 := time.Now().UnixNano()
 	fmt.Println("t2:", t2)
 	fmt.Println("t1:", t1)
-	fmt.Println("time:", t2 - t1)
+	fmt.Println("time:", t2 - t1)	// time: 32365000
 	/*
 	header:&{Status:200 OK StatusCode:200 Proto:HTTP/1.1 ProtoMajor:1 ProtoMinor:1 Header:map[Accept-Ranges:[bytes] Cache-Control:[max-age=600] Connection:[keep-alive] Content-Length:[3889] Content-Type:[image/png] Date:[Sun, 07 Jun 2020 06:52:18 GMT] Expires:[Sun, 07 Jun 2020 07:02:18 GMT] Last-Modified:[Fri, 24 Nov 2017 14:20:54 GMT] Server:[NWS_TCloud_S1] Strict-Transport-Security:[max-age=31536000] X-Cache-Lookup:[Hit From Disktank3 Hit From Inner Cluster] X-Daa-Tunnel:[hop_count=1] X-Nws-Log-Uuid:[1288b092-81aa-4d1e-ba04-b79bcf9d9834]] Body:{} ContentLength:3889 TransferEncoding:[] Close:false Uncompressed:false Trailer:map[] Request:0xc0000f4000 TLS:0xc0003138c0}
 	header:&{Status:200 OK StatusCode:200 Proto:HTTP/1.1 ProtoMajor:1 ProtoMinor:1

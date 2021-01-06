@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	var m = make(map[string]int)
@@ -13,8 +15,13 @@ func main() {
 	}
 
 	// 切片的forr是从0索引开始的
-	var n = []int{1, 2, 3}
+	var n = []int{4, 2, 3}
 	for i, i2 := range n {
 		fmt.Println(i, i2)
 	}
+
+	for s := range m { // 仅仅处理值。
+		fmt.Println("s:", s)
+	}
+
 }
