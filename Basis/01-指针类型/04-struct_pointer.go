@@ -17,3 +17,5 @@ func main() {
 	pointer.myField = 9 // 也可以通过指针来赋值给struct字段
 }
 
+// 另外要注意： 使用指针传递大型struct
+
