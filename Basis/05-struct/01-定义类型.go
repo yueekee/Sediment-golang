@@ -10,7 +10,20 @@ func main() {
 	var carFuel Gallons
 	var busFuel Liters
 	carFuel = Gallons(10.0)
-	busFuel = Liters(240.0)
+	busFuel = Liters(10.0)
+	carFuel += ToGallons(Liters(10.0))
+	busFuel += ToLiters(Gallons(10.0))
+
 	fmt.Println(carFuel, busFuel)
+
+	fmt.Println("a" > "b")	// false
+}
+
+func ToGallons(l Liters) Gallons {
+	return Gallons(l * 0.264)
+}
+
+func ToLiters(g Gallons) Liters {
+	return Liters(g * 3.785)
 }
 
