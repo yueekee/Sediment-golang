@@ -22,7 +22,7 @@ import (
 )
 
 // 请填写您的AccessKeyId。
-var accessKeyId string = "LTAI4G8stRZsZHVd5NNW5Pky"
+var accessKeyId string = ""
 // 请填写您的AccessKeySecret。
 var accessKeySecret string = ""
 // host的格式为 bucketname.endpoint ，请替换为您的真实信息。
