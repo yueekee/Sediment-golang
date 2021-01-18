@@ -30,6 +30,7 @@ var accessKeySecret string = ""
 // host的格式为 bucketname.endpoint ，请替换为您的真实信息。
 var host string = "https://yitai2021.oss-cn-shanghai.aliyuncs.com"
 
+
 // callbackUrl为 上传回调服务器的URL，请将下面的IP和Port配置为您自己的真实信息。
 var callbackUrl string = "http://8.210.220.41:8081/ping"
 
