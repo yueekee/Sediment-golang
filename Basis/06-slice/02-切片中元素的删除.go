@@ -7,6 +7,7 @@ func main() {
 	n := 8
 	ints := RemoveParam(sli, n)
 	fmt.Println(ints)	// [0 0 0 1 2 3 4 5 6 7 9]
+
 }
 
 // 删除指定元素
