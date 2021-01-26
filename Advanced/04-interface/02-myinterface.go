@@ -16,6 +16,7 @@ func (m MyType) MethodWithParameter(f float64) {
 	fmt.Println("MethodWithParameter called with", f)
 }
 func (m MyType) MethodWithReturnValue() string {
+
 	return "Hi from MethodWithReturnValue"
 }
 func (m MyType) MethodNotInInterface() {

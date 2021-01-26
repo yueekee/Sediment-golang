@@ -21,5 +21,5 @@ func main() {
 		Message:"unknown err",
 	}
 	s := e.Error()
-	fmt.Println(s)
+	fmt.Println(s)	// mesg: unknown err, code: 400
 }
