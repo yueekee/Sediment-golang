@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-/*
+/* Context接口
 type Context interface {
 	// 返回context被取消的时间
 	Deadline() (deadline time.Time, ok bool)
