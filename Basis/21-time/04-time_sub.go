@@ -18,6 +18,7 @@ time包有几种格式：
 type JsonTime struct {
 	time.Time
 }
+// 使用JsonTime时，如果值为null，json对应的值为0
 
 func main() {
 	// time.Parse 将string->Time，并返回Time
