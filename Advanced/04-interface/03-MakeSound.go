@@ -32,7 +32,8 @@ func main() {
 	toy = Horn("222")
 	toy.MakeSound() // Honk!
 
-	// -------------- 或者可以将行数的参数定义为接口类型
+	// --------------
+	// 或者可以将行数的参数定义为接口类型
 	play(Whistle("234")) // Tweet!
 	play(Horn("345"))    // Honk!
 
