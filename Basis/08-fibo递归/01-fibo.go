@@ -16,5 +16,4 @@ func fibo(num int) int {
 	} else {
 		return fibo(num-2) + fibo(num-1)
 	}
-
 }
