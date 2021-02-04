@@ -72,17 +72,4 @@ func main() {
 	TimeSub1Year := Time1.AddDate(-1, 0, 0)
 	fmt.Println("TimeSub1Year:", TimeSub1Year)	// TimeSub1Year: 2019-06-09 10:51:06 +0800 CST
 
-	// Truncate 返回最接近但早于Time1的时间点;如果DurationSub<0，则但会Time1的copy
-	// Time1: 2020-06-09 10:51:06 +0800 CST
-	DurationTruncate := Time1.Truncate(DurationSub)
-	fmt.Println("DurationTruncate:", DurationTruncate) // DurationTruncate: 2020-06-09 08:00:00 +0800 CST 这里是按天算
-
-	DurationTruncate2 := Time1.Truncate(time.Hour)
-	fmt.Println("DurationTruncate2:", DurationTruncate2)	// DurationTruncate2: 2020-06-09 10:00:00 +0800 CST
-
-	DurationTruncate3 := Time1.Truncate(time.Second)
-	fmt.Println("DurationTruncate3:", DurationTruncate3)	// DurationTruncate3: 2020-06-09 10:51:06 +0800 CST
-
-	DurationTruncate4 := Time1.Truncate(-time.Hour)
-	fmt.Println("DurationTruncate4:", DurationTruncate4)	// DurationTruncate4: 2020-06-09 10:51:06 +0800 CST
 }
