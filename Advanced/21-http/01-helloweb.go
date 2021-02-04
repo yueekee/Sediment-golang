@@ -9,7 +9,7 @@ import (
 // *http.Request 表示来自浏览器的请求的值
 func viewHandler(writer http.ResponseWriter, request *http.Request) {
 	message := []byte("Hello,web")
-	_, err := writer.Write(message)
+	_, err := writer.Write(message) // 将该数据添加到发送到浏览器的响应中
 	if err != nil {
 		log.Fatal(err)
 	}
