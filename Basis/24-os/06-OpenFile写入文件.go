@@ -12,7 +12,8 @@ func check(err error) {
 }
 
 func main() {
-	file, err := os.OpenFile("my.txt", os.O_WRONLY, os.FileMode(0600))	// 这样将新文本插入到文件的开头，并覆盖了原来的数据
+	//file, err := os.OpenFile("my.txt", os.O_WRONLY, os.FileMode(0600))	// 这样将新文本插入到文件的开头，并覆盖了原来的数据
+	file, err := os.OpenFile("my.txt", os.O_WRONLY|os.O_APPEND, os.FileMode(0600))
 	check(err)
 	_, err = file.Write([]byte("amazing!\n"))
 	check(err)
