@@ -9,14 +9,14 @@
     <h1>Guestbook</h1> // 一级标题
 
     <div>
-        X total signature -
+        {{.SignatureCount}} total signature -
         <a href="/guestbook/new">Add Your Signature</a>
     </div>
 
     <div>
-        <p>Signature</p>
-        <p>go</p>
-        <p>here</p>
+        {{range .Signatures}}
+            <p>{{.}}</p>
+        {{end}}
     </div>
 </body>
 </html>
