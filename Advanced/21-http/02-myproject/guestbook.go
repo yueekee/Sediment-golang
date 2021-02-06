@@ -62,7 +62,7 @@ func newHandler(writer http.ResponseWriter, request *http.Request) {
 }
 
 func createHandler(writer http.ResponseWriter, request *http.Request) {
-	signature := request.FormValue("signature")
+	signature := request.FormValue("signature")	// 访问来来自请求的表单数据
 	// 将签名写入txt文件
 	options := os.O_WRONLY | os.O_APPEND | os.O_CREATE // 打开文件的选项
 	file, err := os.OpenFile("signatures.txt", options, os.FileMode(0600))

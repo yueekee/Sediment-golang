@@ -73,6 +73,7 @@ func main() {
 	Count: 2
 	*/
 
+	// 如果点指向一个struct值，可以用{{.Fieldname}}插入该struct中的字段值。
 	type Subscriber struct {
 		Name string
 		Rate float64
