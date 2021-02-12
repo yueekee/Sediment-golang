@@ -82,6 +82,7 @@ func getString(fileName string) []string {
 	}
 	check(scanner.Err()) // 报告任何扫描错误
 	return lines
+
 }
 
 func main() {
