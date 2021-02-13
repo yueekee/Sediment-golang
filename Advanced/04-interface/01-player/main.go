@@ -46,4 +46,6 @@ func main() {
 	// --------------
 	fmt.Println("-----------")
 	TryOut(gadget.TapeRecorder{})
+	fmt.Println("-----------2")
+	TryOut(gadget.TapePlayer{})
 }
