@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	//test1()
@@ -36,9 +38,12 @@ func test2() {
 
 func goroutineTest() {
 	list := []int{1, 2, 3}
+	ch := make(chan int)
 	for _, v := range list {
-		go func() {
-			fmt.Printf("v:%d ", v) // todo 为什么打印不出来
-		}()
+		go func(ch chan int) {
+			ch <- v
+			fmt.Printf("v:%d\n", v)
+		}(ch)
+		<- ch
 	}
 }
