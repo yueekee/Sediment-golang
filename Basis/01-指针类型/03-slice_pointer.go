@@ -8,9 +8,9 @@ import (
 
 func main() {
 	months := []string{1: "January"}
-	fmt.Printf("%p,\n", &months)
-	fmt.Printf("%p,\n", months)
-	fmt.Printf("%p,\n", &months[0])
+	fmt.Printf("%p,\n", &months)    // 0xc0000a6020,
+	fmt.Printf("%p,\n", months)     // 0xc0000a6040,
+	fmt.Printf("%p,\n", &months[0]) // 0xc0000a6040,
 
 	header := (*reflect.SliceHeader)(unsafe.Pointer(&months))
 	fmt.Printf("%p,\n", header)          // months 变量地址 (SliceHeader)
