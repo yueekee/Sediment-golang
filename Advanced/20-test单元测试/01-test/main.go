@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	prose "github.com/liankui/Sediment-golang/Advanced/20-test/01-test/prose"
+	prose "github.com/liankui/Sediment-golang/Advanced/20-test单元测试/01-test/prose"
 )
 
 func main() {
