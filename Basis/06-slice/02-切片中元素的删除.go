@@ -25,4 +25,5 @@ func RemoveParam(sli []int, n int) []int {
 		}
 	}
 	return sli
+
 }
