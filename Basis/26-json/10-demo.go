@@ -60,5 +60,4 @@ func main() {
 	fmt.Printf("m:%#v\n", m)
 	// m:[map[content:专栏666666 friends:[map[content:卖火柴的安妮 targetId:43]
 	//map[content:asd targetId:53]]] map[content:专栏66666 friends:[map[content:卖火柴的安妮 targetnt:asd targetId:53]]]]
-
 }
