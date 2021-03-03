@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func check(err error) {
+func check1(err error) {
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15,11 +15,11 @@ func check(err error) {
 
 func main() {
 	file, err := os.OpenFile("my.txt", os.O_RDONLY, os.FileMode(0600))
-	check(err)
+	check1(err)
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
 	}
-	check(err)
+	check1(err)
 }
