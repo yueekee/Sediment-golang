@@ -2,8 +2,13 @@ package main
 
 import "fmt"
 
-type Liters float64
+/*总结：
+struct可以定义任意基础类型
+可以把基础类型的值转换为定义的类型，如carFuel = Gallons(10.0)
+*/
+
 type Gallons float64
+type Liters float64
 
 // 一旦定义了一个类型，你可以把任何基础类型的值转换为定义的类型。
 func main() {
@@ -15,8 +20,6 @@ func main() {
 	busFuel += ToLiters(Gallons(10.0))
 
 	fmt.Println(carFuel, busFuel)
-
-	fmt.Println("a" > "b")	// false
 }
 
 func ToGallons(l Liters) Gallons {
