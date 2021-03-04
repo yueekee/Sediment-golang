@@ -2,6 +2,14 @@ package main
 
 import "fmt"
 
+/*总结：接口和指针
+实现接口里的类型如果是指针类型，声明时必须按指针类型声明
+*/
+
+type Toggleable interface{
+	toggle()
+}
+
 type Switch string
 func (s *Switch) toggle() {
 	if *s == "on" {
@@ -10,10 +18,6 @@ func (s *Switch) toggle() {
 		*s = "on"
 	}
 	fmt.Println(*s)
-}
-
-type Toggleable interface{
-	toggle()
 }
 
 func main() {

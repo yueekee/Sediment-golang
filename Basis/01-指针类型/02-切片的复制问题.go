@@ -4,10 +4,13 @@ import (
 	"fmt"
 )
 
-// 遍历切片a元素，将其地址存到切片指针b，切片指针b中所有的元素指向切片a的地址，对应的值为切片最后的一个元素
-// 解决办法：
-// 将遍历出来的切片a的元素重新赋值——它的地址就会改变
-// 使用channel进行传递也可以
+/*总结：复制切片/数组元素可能出现的问题
+遍历切片a元素，将其地址存到切片指针b，切片指针b中所有的元素指向切片a的地址，对应的值为切片最后的一个元素，见test1函数
+解决办法：
+1.将遍历出来的切片a的元素重新赋值——产生了新的地址，见test2函数
+2.使用channel进行传递也可以不用担心值不对的问题，见goroutineTest函数
+*/
+
 func main() {
 	test1()
 	test2()
@@ -46,8 +49,13 @@ func goroutineTest() {
 	for _, v := range list {
 		go func(ch chan int) {
 			ch <- v
-			fmt.Printf("v:%d\n", v)
+			fmt.Printf("v:%d, &v:%p\n", v, &v)
 		}(ch)
 		<- ch
 	}
+/*
+   v:1, &v:0xc0000140d8
+   v:2, &v:0xc0000140d8
+   v:3, &v:0xc0000140d8
+*/
 }

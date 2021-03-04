@@ -2,6 +2,13 @@ package main
 
 import "fmt"
 
+/*总结：结构体指针
+1.初始化一个结构体指针pointer，调用结构体字段有两种方式
+	(*pointer).myField	// 注意有括号
+	pointer.myField		// 点运算符允许通过struct的指针来访问字段
+2.大型结构体的传递使用指针
+*/
+
 type myStruct struct {
 	myField int
 }
