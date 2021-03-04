@@ -20,15 +20,17 @@ switch有2中用法：
 		default：
 			默认代码
 		}
-
-这里有个问题：输入金额为-09时，金额为0，感觉是取值只能拿到一位数。
 */
 func main() {
 	var money int
+	switch1(money)
+	//switch2(money)
+}
+
+func switch1(money int) {
 	for {
-		fmt.Println("输入金额")
-		fmt.Scan(&money)
-		fmt.Println("输入金额：", money)
+		fmt.Print("输入金额:")
+		fmt.Scan(&money)	// 获取键盘输入的值
 		switch {
 		case money >= 4000:
 			fmt.Println("钻石用户")
@@ -44,9 +46,11 @@ func main() {
 			fmt.Println("请输入正确的金额")
 		}
 	}
+}
 
-	/*	for {
-		fmt.Println("输入金额")
+func switch2(money int) {
+	for {
+		fmt.Println("输入金额:")
 		fmt.Scan(&money)
 		if money >= 4000 {
 			fmt.Println("钻石用户")
@@ -59,5 +63,5 @@ func main() {
 		} else {
 			fmt.Println("普通用户")
 		}
-	}*/
+	}
 }

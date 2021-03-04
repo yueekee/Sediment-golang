@@ -2,12 +2,17 @@ package main
 
 import "fmt"
 
-/* 总结：
+/* 总结：goto
 1.goto跳转到标签
-2.标签需要使用:
+2.标签需要使用`:`
 */
 
 func main() {
+	label1()
+	breakLabel()
+}
+
+func label1() {
 	i := 1
 label1:
 	fmt.Println(i)
@@ -16,7 +21,6 @@ label1:
 	for i <= 5 {
 		goto label1
 	}
-	//breakLabel()
 }
 
 // 另外中断多重循环也可使用“标签”

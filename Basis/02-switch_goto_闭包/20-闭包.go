@@ -26,11 +26,12 @@ func fun1() func() int {
 }
 
 func fun2() {
-	var fn [3]func()
+	var fn [3]func()	// fn是一个匿名函数数组
 	for i := 0; i < 3; i++ {
-		fn[i] = func() {
+		fn[i] = func() {	// 这里是没有实现闭包，写法错误
 			fmt.Println(i)
 		}
+		fmt.Println(fn)
 	}
 	fn[0]() // 3
 	fn[1]() // 3，这里分析，i的变量只有一个且最后一个值为3，被3个函数共同访问
