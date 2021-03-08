@@ -6,8 +6,10 @@ import (
 	"time"
 )
 
-// close后的channel可以读取数据
-// close后的channel不能再写入数据，会报错 panic: send on closed channel
+/*总结：close()
+close后的channel可以读取数据
+close后的channel不能再写入数据，会报错 panic: send on closed channel
+*/
 
 func main() {
 	rand.Seed(time.Now().Unix())
@@ -29,5 +31,4 @@ func main() {
 		ch <- 10
 	}()
 	select {}
-
 }
