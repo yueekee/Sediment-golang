@@ -19,11 +19,12 @@ func main() {
 }
 
 func test1() {
-	in := []int{1, 2, 3}
+	a, b, c := 1,2,3
+	in := []*int{&a, &b, &c}
 
 	var out []*int
 	for _, v := range in {
-		out = append(out, &v)
+		out = append(out, v)
 	}
 
 	fmt.Println("*out:", *out[0], *out[1], *out[2]) // *out: 3 3 3
