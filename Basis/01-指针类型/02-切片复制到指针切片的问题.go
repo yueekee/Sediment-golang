@@ -13,6 +13,7 @@ import (
 
 func main() {
 	test1()
+	test12() // 也可以解决
 	test2()
 	goroutineTest()
 }
@@ -21,13 +22,25 @@ func test1() {
 	in := []int{1, 2, 3}
 
 	var out []*int
-	for _, v := range in {
-		out = append(out, &v)
+	for i, _ := range in {
+		out = append(out, &in[i])
 	}
 
 	fmt.Println("*out:", *out[0], *out[1], *out[2]) // *out: 3 3 3
 	fmt.Println("out:", out[0], out[1], out[2]) // out: 0xc00001a0a8 0xc00001a0a8 0xc00001a0a8
 	// 原因：每次迭代中，都会把v的地址附加到out切片中，但v的地址都是一样的，该地址都指向同一个值
+}
+
+func test12() {
+	in := []int{1, 2, 3}
+
+	var out []*int
+	for i, _ := range in {
+		out = append(out, &in[i])
+	}
+
+	fmt.Println("*out:", *out[0], *out[1], *out[2]) // *out: 1 2 3
+	fmt.Println("out:", out[0], out[1], out[2])
 }
 
 func test2() {
