@@ -10,8 +10,8 @@ import "fmt"
 func main() {
 	array := [5]int{1, 2, 3, 4, 5}
 	fmt.Printf("%p\n", &array) // 0xc0000160c0
-	s := array[1:4]
-	fmt.Printf("%#v, %p, len:%v, cap:%v\n", s, s, len(s), cap(s)) // []int{2, 3, 4}, 0xc0000160c8, len:3, cap:4
+	s := array[1:2:4]
+	fmt.Printf("%#v, %p, len:%v, cap:%v\n", s, s, len(s), cap(s)) // []int{2}, 0xc0000160c8, len:1, cap:3
 
 	slice := []int{1, 2, 3}
 	fmt.Printf("%#v, len:%v, cap:%v\n", slice, len(slice), cap(slice)) // []int{1, 2, 3}, len:3, cap:3
