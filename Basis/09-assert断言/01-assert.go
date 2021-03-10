@@ -8,7 +8,7 @@ import (
 1.值.(数据类型)
 value, ok := v.(int)	// 返回值和该值是否为该数据类型的判断
 2.值.(type)
-switch value := v.(type)
+switch value := v.(type)	需要注意：只有接口才能使用.(type)的用法
 
 */
 func main() {
