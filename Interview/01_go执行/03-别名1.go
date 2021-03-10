@@ -12,9 +12,10 @@ type MyInt2 = int
 
 func main() {
 	var i int = 0
-	var y MyInt1 = 1
 	//var i1 MyInt1 = i	// 报错：i不是int类型，而应该是MyInt1类型
-	var i1 MyInt1 = y
-	var i2 MyInt2 = i
-	fmt.Println(i1, i2)
+	var y MyInt1 = 1
+	var j MyInt1 = y
+	var k MyInt1 = MyInt1(1)
+	var l MyInt2 = i
+	fmt.Println(j, k, l)
 }
