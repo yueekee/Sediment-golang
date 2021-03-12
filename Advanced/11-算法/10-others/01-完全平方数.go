@@ -9,6 +9,7 @@ import "fmt"
 
 // 这个算法不行
 func main() {
+
 	for y := 1; y < 1e6; y++ {
 		for n := 40*y + 1; n < 43*y; n++ {
 			fmt.Printf("y: %v, n: %v\n", y, n)
