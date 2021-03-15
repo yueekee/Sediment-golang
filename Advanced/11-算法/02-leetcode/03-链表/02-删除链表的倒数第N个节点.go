@@ -1,4 +1,4 @@
-package main
+package _3_链表
 
 /*
 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
@@ -8,10 +8,6 @@ package main
 进阶：
 你能尝试使用一趟扫描实现吗？
 */
-
-func main() {
-
-}
 
 //type ListNode struct {
 //	Val  int

@@ -1,6 +1,8 @@
-package main
+package _3_链表
 
-import "fmt"
+import (
+	"fmt"
+)
 
 /*
 请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点。传入函数的唯一参数为 要被删除的节点 。
@@ -13,31 +15,13 @@ import "fmt"
 不要从你的函数中返回任何结果。
 */
 
-func main() {
-	node := NewListNode()
-	node.AddLastNode(1)
-	node.AddLastNode(2)
-	node.AddLastNode(3)
-	node.PrintListNode()
-}
-
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 // O(1)
-func deleteNode(node *ListNode) {
+func (node *ListNode) DeleteNode() {
 	node.Val = node.Next.Val
 	node.Next = node.Next.Next
 }
 
-// -------------------
-
-func NewListNode() *ListNode {
-	return &ListNode{}
-}
-
+// 添加最后一个节点
 func (node *ListNode) AddLastNode(val int) {
 	if node == nil {
 		node.Val = val
@@ -49,6 +33,7 @@ func (node *ListNode) AddLastNode(val int) {
 		node = node.Next
 	}
 
+	node.Next = new(ListNode)	// 下一个节点需要重新定义，不然会报空指针错误
 	node.Next.Val = val
 	node.Next.Next = nil
 }

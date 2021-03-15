@@ -45,13 +45,14 @@ func twoSum2(nums []int, target int) []int {
 
 // todo 是否可以在写map时，同时进行查询
 func twoSum(nums []int, target int) []int {
-	var arr []int
+	//var arr []int
 	hmap := make(map[int]int)
 	for i := 0; i < len(nums); i++ {
 		hmap[nums[i]] = target - nums[i]
 		if nums[i] + hmap[nums[i]] == target {
 		}
 	}
+	return nil
 }
 
 //leetcode submit region end(Prohibit modification and deletion)

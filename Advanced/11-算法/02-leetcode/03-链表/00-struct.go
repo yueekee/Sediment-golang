@@ -1,13 +1,17 @@
-package main
+package _3_链表
 
 import "fmt"
 
 type ListNode struct {
-	Val int
 	Next *ListNode
+	Val  int
 }
 
-func showListNode(node *ListNode) {
+func NewListNode() *ListNode {
+	return &ListNode{}
+}
+
+func (node *ListNode) ShowListNode() {
 	if node == nil {
 		fmt.Println("node 为 nil")
 		return
@@ -20,7 +24,7 @@ func showListNode(node *ListNode) {
 }
 
 type TreeNode struct {
-	Val int
-	Left *TreeNode
+	Val   int
+	Left  *TreeNode
 	Right *TreeNode
 }
