@@ -1,16 +1,15 @@
 package main
 
 import (
-	"log"
 	"os"
 	"text/template"
 )
 
-func check(err error) {
-	if err != nil {
-		log.Fatal(err)
-	}
-}
+//func check(err error) {
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//}
 
 func main() {
 	text := "Here's my template!\n"

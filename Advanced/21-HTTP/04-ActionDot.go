@@ -1,16 +1,15 @@
 package main
 
 import (
-	"log"
 	"os"
 	"text/template"
 )
 
-func check(err error) {
-	if err != nil {
-		log.Fatal(err)
-	}
-}
+//func check(err error) {
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//}
 
 // 在模版中插入数据，可以在模版文本中添加action操作(action用花括号{{}}表示)
 // 在花括号中，指定要插入的数据或要模版执行的操作。
