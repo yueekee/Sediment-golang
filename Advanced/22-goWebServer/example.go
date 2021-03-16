@@ -65,7 +65,7 @@ Header["Cookie"] = ["Phpstorm-5064742f=319dc684-3667-44b8-afb9-e3f7466f4109; UM_
 Header["Sec-Ch-Ua-Mobile"] = ["?0"]
 Header["Sec-Fetch-Mode"] = ["navigate"]
 Header["Sec-Ch-Ua"] = ["\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\""]
-Header["Accept"] = ["text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"]
+Header["Accept"] = ["text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng
 Header["Sec-Fetch-Site"] = ["none"]
 Header["Accept-Encoding"] = ["gzip, deflate, br"]
 Header["Accept-Language"] = ["zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7"]
