@@ -11,8 +11,8 @@ slice只能和nil做比较，不能两个切片做比较
 */
 
 func main() {
-	var s1 []int     // 为nil
-	var s2 = []int{} // 为nil切片
+	var s1 []int     // 声明为nil切片
+	var s2 = []int{} // 声明为长度和容量都为0的空切片
 	var n1 []int
 	var	n2 = []int{1}
  	n1 = append(n1, 1)
