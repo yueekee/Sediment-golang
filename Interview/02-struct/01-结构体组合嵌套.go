@@ -2,6 +2,14 @@ package main
 
 import "fmt"
 
+/*总结
+答案：
+showA
+showB
+teacher showB
+Teacher 没有自己 ShowA()，所以调用内部类型 People 的同名方法
+*/
+
 type People struct{}
 
 func (p *People) ShowA() {
@@ -26,8 +34,3 @@ func main() {
 	t.ShowB() // 这个才是Teacher的方法
 }
 
-/*
-被组合的类型People所包含的方法虽然升级成了外部类型Teacher这个组合类型的方法（一定要是匿名字段），
-但它们的方法(ShowA())调用时接受者并没有发生变化。 此时People类型并不知道自己会被什么类型组合，
-当然也就无法调用方法时去使用未知的组合者Teacher类型的功能。
-*/
