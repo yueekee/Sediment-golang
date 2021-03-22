@@ -12,9 +12,9 @@ import (
 // 1.构建一个简单的http-rpc服务器
 // 2.改为tcp-rpc服务器
 // 3.改为json-rpc服务器
-type Args struct {
-	A, B int
-}
+//type Args struct {
+//	A, B int
+//}
 
 type Math int
 
@@ -23,9 +23,9 @@ func (m Math) Multiple(args Args, reply *int) error {	// 这里第二个参数�
 	return nil
 }
 
-type Quotient struct {
-	Quo, Rem int
-}
+//type Quotient struct {
+//	Quo, Rem int
+//}
 
 func (m Math) Divide(args Args, quo *Quotient) error {
 	if args.B == 0 {
