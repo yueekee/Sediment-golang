@@ -3,7 +3,8 @@ package main
 import "fmt"
 
 /*总结：
-range 表达式是副本参与循环，并不是原来的数组。针对数组有这个问题，对slice没有
+range 表达式是副本参与循环，并不是原来的数组。针对数组有这个问题，对slice却没有这个问题
+因为slice有一个指向底层数组的指针，当range表达式发生复制时，副本的指针依旧指向原底层数组
 */
 
 func main() {
@@ -75,7 +76,7 @@ func fix2() {
 
 func testSlice() {
 	var a = []int{1, 2, 3, 4, 5}
-	r := make([]int, 5)
+	var r [5]int
 
 	for i, v := range a {
 		if i == 0 {
