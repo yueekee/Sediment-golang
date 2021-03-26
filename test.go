@@ -2,10 +2,14 @@ package main
 
 import "fmt"
 
+func test(x byte)  {
+	fmt.Println(x)
+}
+
 func main() {
-	x := interface{}(nil)
-	t, c := x.(interface{})
-	fmt.Printf("%#v\n", x)
-	fmt.Printf("%#v\n", t)
-	fmt.Printf("%#v\n", c)
+	var a byte = 0x11
+	fmt.Println(a)
+	var b uint8 = a
+	var c uint8 = a + b
+	test(c)
 }
