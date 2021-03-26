@@ -7,17 +7,11 @@ type ConfigOne struct {
 }
 
 func (c *ConfigOne) String() string {
-	return fmt.Sprintf("print: %v", c.String())
+	fmt.Printf("%#v", c)
+	return fmt.Sprintf("print: %v", c)
 }
 
 func main() {
-	//c := &ConfigOne{}
-	//c.String()
-
-	status := 1	// 0001
-	num := 2 // 0010  3-> 0011
-	if true {
-		num |= status
-	}
-	fmt.Println("num:", num)
+	c := &ConfigOne{}
+	c.String()
 }
