@@ -2,14 +2,18 @@ package main
 
 import "fmt"
 
-func test(x byte)  {
-	fmt.Println(x)
-}
+var o = fmt.Print
 
 func main() {
-	var a byte = 0x11
-	fmt.Println(a)
-	var b uint8 = a
-	var c uint8 = a + b
-	test(c)
+	var m map[int]bool // nil
+	_ = m[123]
+	fmt.Printf("%#v\n", m)
+	var p *[5]string // nil
+	for range p {
+		_ = len(p)
+	}
+	fmt.Printf("%#v\n", p)
+	var s []int // nil
+	_ = s[:]
+	s, s[0] = []int{1, 2}, 9
 }
