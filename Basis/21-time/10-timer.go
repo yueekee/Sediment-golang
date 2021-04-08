@@ -6,7 +6,7 @@ import (
 )
 
 /* 总结：
-定时器：使用time.After函数，多长时间后执行命令
+定时器：使用time.NewTimer或time.After函数，多长时间后执行命令
 时间周期：使用time.NewTicker
 */
 
@@ -18,8 +18,20 @@ func main() {
 	fmt.Println(<-timer2)
 
 	ticker := time.NewTicker(time.Second) // 每隔1s进行一次
-	for {
+	i := 0
+	for i < 5 {
 		<-ticker.C
-		fmt.Println("这是ticker的打印")
+		fmt.Printf("这是ticker的打印:%d\n", i)
+		i ++
 	}
 }
+
+/*
+2021-04-08 10:02:43.074451 +0800 CST m=+1.004562085
+2021-04-08 10:02:44.076154 +0800 CST m=+2.006251184
+这是ticker的打印:0
+这是ticker的打印:1
+这是ticker的打印:2
+这是ticker的打印:3
+这是ticker的打印:4
+*/
