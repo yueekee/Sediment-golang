@@ -23,6 +23,7 @@ func main() {
 		ch <- struct{}{}
 	}()
 
+
 	time.Sleep(time.Second)
 }
 
