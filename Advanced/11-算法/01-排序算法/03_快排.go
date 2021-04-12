@@ -1,10 +1,11 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
 
+/*
+快速排序的原理，首先找到一个数pivot把数组‘平均’分成两组，使其中一组的所有数字均大于另一组中的数字，
+此时pivot在数组中的位置就是它正确的位置。然后，对这两组数组再次进行这种操作。
+*/
 func quickSort(arr []int, start, end int) {
 	if start < end {
 		i, j := start, end
@@ -38,15 +39,19 @@ func quickSort(arr []int, start, end int) {
 }
 
 func main() {
-	startTime := time.Now().UnixNano()
-	for i := 0; i < 100000; i++ {
-		arr := []int{12, 8, 38, 65, 2, 93}
-		quickSort(arr, 0, len(arr)-1)
-	}
-	endTime := time.Now().UnixNano()
+	//startTime := time.Now().UnixNano()
+	//for i := 0; i < 100000; i++ {
+	//	arr := []int{12, 8, 38, 65, 2, 93}
+	//	quickSort(arr, 0, len(arr)-1)
+	//}
+	//endTime := time.Now().UnixNano()
+	//
+	//nanoSeconds:= float64(endTime - startTime)
+	//
+	////fmt.Println(arr)
+	//fmt.Printf("second:%f", nanoSeconds/100000)
 
-	nanoSeconds:= float64(endTime - startTime)
-
-	//fmt.Println(arr)
-	fmt.Printf("second:%f", nanoSeconds/100000)
+	sli := []int{12, 8, 38, 65, 2, 93}
+	quickSort(sli, 0, len(sli)-1)
+	fmt.Println(sli)	// [2 8 12 38 65 93]
 }
