@@ -1,33 +1,24 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
 
-/* 拿第n个数字和之后的所有数字进行比较，大的排到前面
-
+/* 选择排序
+拿第n个数字和之后的所有数字进行比较，大的排到前面
  */
-func selectionSort(arr []int) {
-	for n := 0; n < len(arr)-1; n++ {
-		for i := n + 1; i <= len(arr)-1; i++ {
-			if arr[i] > arr[n] {
-				arr[i], arr[n] = arr[n], arr[i]
+
+func selectionSort(sli []int) {
+	for i := 0; i < len(sli)-1; i++ {
+		for j := i+1; j <= len(sli)-1; j++ {
+			if sli[j] > sli[i] {
+				sli[j], sli[i] = sli[i], sli[j]
+				fmt.Printf("i:%d,j:%d,sli:%v\n", i, j, sli)
 			}
 		}
 	}
 }
 
 func main() {
-	startTime := time.Now().UnixNano()
-	for i := 0; i < 100000; i++ {
-		arr := []int{12, 8, 38, 65, 2, 93}
-		selectionSort(arr)
-	}
-	endTime := time.Now().UnixNano()
-
-	nanoSeconds:= float64(endTime - startTime)
-
-	//fmt.Println(arr)
-	fmt.Printf("second:%f", nanoSeconds/100000)
+	sli := []int{12, 8, 38, 65, 2, 93}
+	selectionSort(sli)
+	fmt.Println(sli)	// [93 65 38 12 8 2]
 }

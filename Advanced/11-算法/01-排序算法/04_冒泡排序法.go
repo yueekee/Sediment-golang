@@ -18,18 +18,6 @@ func bubbleSort(sli []int) {
 }
 
 func main() {
-	//startTime := time.Now().UnixNano()
-	//for i := 0; i < 100000; i++ {
-	//	arr := []int{12, 8, 38, 65, 2, 93}
-	//	bubbleSort(arr)
-	//}
-	//endTime := time.Now().UnixNano()
-	//
-	//nanoSeconds:= float64(endTime - startTime)
-	//
-	////fmt.Println(arr)
-	//fmt.Printf("second:%f", nanoSeconds/100000)
-
 	sli := []int{12, 8, 38, 65, 2, 93, 1}
 	bubbleSort(sli)
 	fmt.Println(sli)	// [1 2 8 12 38 65 93]
