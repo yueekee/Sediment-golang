@@ -15,9 +15,8 @@ import "fmt"
 
 func main() {
 	nums := []int{0, 1, 1, 1, 2, 2, 3, 3, 4}
-	//[0,0,1,1,1,2,2,3,3,4]
-	duplicates := removeDuplicates(nums)
-	fmt.Println(duplicates)
+	duplicates := removeDuplicates1(nums)
+	fmt.Println(duplicates)	// 5
 }
 
 // O(n^2)
@@ -34,12 +33,6 @@ func removeDuplicates1(nums []int) int {
 			}
 		}
 	}
+	fmt.Println(nums)	// [0 1 2 3 4]
 	return len(nums)
-}
-
-func removeDuplicates(nums []int) int {
-	count := 0
-
-
-	return count
 }
