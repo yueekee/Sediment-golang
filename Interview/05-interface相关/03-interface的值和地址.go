@@ -13,9 +13,9 @@ func main() {
 	s := S{}
 	p := &s
 	f(s) //A
-	g(s) //B
+	//g(s) //B
 	f(p) //C
-	g(p) //D
+	//g(p) //D
 }
 
 /*
