@@ -9,8 +9,8 @@ type B interface {
 }
 
 func main() {
-	a := A(nil)
-	b := B(nil)
+	a := A(1)
+	b := B("1")
 	if a == b {
 		fmt.Println("a = b")
 	}
