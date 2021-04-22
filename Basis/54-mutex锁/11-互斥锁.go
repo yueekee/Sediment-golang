@@ -9,9 +9,7 @@ import (
 func main() {
 	go user1()
 	go user2()
-	for {
-		;
-	}
+	time.Sleep(time.Second)
 }
 
 var mu sync.Mutex
@@ -21,12 +19,12 @@ func printer(str string) {
 	defer mu.Unlock()
 	for _, s := range str {
 		fmt.Printf("%c", s)
-		time.Sleep(time.Millisecond * 300)
+		time.Sleep(time.Millisecond * 30)
 	}
 }
 
 func user1() {
-	printer("hello")
+	printer("hello ")
 }
 
 func user2() {
