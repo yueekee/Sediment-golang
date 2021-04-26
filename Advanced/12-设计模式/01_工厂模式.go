@@ -34,8 +34,8 @@ type HTMLButton struct {}
 func (*HTMLButton) render(a, b int) {}
 func (*HTMLButton) onClick(f int) {}
 
-func main() {
-	var h HTMLDialog
-	htmlButton := h.createButton()
-	h.Dialog.createButton()
-}
+//func main() {
+//	var h HTMLDialog
+//	htmlButton := h.createButton()
+//	h.Dialog.createButton()
+//}
