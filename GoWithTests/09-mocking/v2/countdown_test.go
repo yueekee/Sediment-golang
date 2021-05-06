@@ -23,7 +23,7 @@ Go!`
 
 	t.Run("sleep after every print", func(t *testing.T){
 		spySleeperPrinter := &ConutdownOperationSpy{}
-		Countdown(spySleeperPrinter, spySleeperPrinter)
+		Countdown(spySleeperPrinter, spySleeperPrinter)	// ConutdownOperationSpy实现了io.Writer的方法
 
 		want := []string{
 			sleep, 

@@ -21,6 +21,7 @@ require (
 	github.com/jinzhu/copier v0.2.8 // indirect
 	github.com/julz/importas v0.0.0-20210419104244-841f0c0fe66d // indirect
 	github.com/magiconair/properties v1.8.5 // indirect
+	github.com/mailru/easyjson v0.7.7
 	github.com/mattn/go-colorable v0.1.8 // indirect
 	github.com/mattn/go-runewidth v0.0.12 // indirect
 	github.com/mgechev/revive v1.0.6 // indirect

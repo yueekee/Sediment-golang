@@ -28,15 +28,8 @@ type SpySleeper struct {
 }
 
 func (s *SpySleeper) Sleep() {
+	fmt.Println("SpySleeper sleep")
 	s.Calls++
-}
-
-type ConfigurableSleeper struct {
-    duration time.Duration
-}
-
-func (o *ConfigurableSleeper) Sleep() {
-    time.Sleep(o.duration)
 }
 
 func Countdown(out io.Writer, sleeper Sleeper) {
@@ -46,6 +39,15 @@ func Countdown(out io.Writer, sleeper Sleeper) {
 	}
 	sleeper.Sleep()
 	fmt.Fprintf(out, finalWord)
+}
+
+type ConfigurableSleeper struct {
+    duration time.Duration
+}
+
+func (o *ConfigurableSleeper) Sleep() {
+	fmt.Println("ConfigurableSleeper sleep")
+    time.Sleep(o.duration)
 }
 
 func main() {

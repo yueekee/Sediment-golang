@@ -11,9 +11,6 @@ import (
 所谓迭代是指：确保我们采取最小的步骤让软件可用。
 尽你所能拆分需求是一项很重要的技能，这样你就能拥有可以工作的软件。
 缓慢的测试会破坏开发人员的生产力。
-
-改进：
-测试顺序的问题。
 */
 
 const (
@@ -27,6 +24,7 @@ type Sleeper interface {
 	Sleep()
 }
 
+// 添加对次数的监控
 type SpySleeper struct {
 	Calls int
 }
