@@ -27,4 +27,5 @@ func main() {
 	s1 := []int{1, 2, 3}
 	s2 := []int{1, 2, 3}
 	fmt.Println("s1 == s2:", reflect.DeepEqual(s1, s2))
+	// s1 == s2: true
 }

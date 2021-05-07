@@ -8,7 +8,7 @@ import (
 /* WaitGroup
 1.新建WaitGroup组
 2.Add添加任务数
-3.没执行完一个任务，使用Done减去一个任务数
+3.每执行完一个任务，使用Done减去一个任务数
 4.使用wait等待任务数为0时结束
 */
 

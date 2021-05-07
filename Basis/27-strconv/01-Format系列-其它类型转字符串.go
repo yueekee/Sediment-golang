@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-// Format系列为将"字符串"转化为"其它类型"
+// Format系列为将"其它类型"转化为"字符串"
 func main() {
 	// FormatUint uint64 -> string
 	var ID uint64 = 10

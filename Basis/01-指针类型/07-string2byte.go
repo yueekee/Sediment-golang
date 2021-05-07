@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 /*总结：
-string转【】byte是值拷贝
+string转[]byte是值拷贝
 */
 
 func main() {
