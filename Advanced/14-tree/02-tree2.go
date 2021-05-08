@@ -1,5 +1,5 @@
 // Package binarysearchtree creates a ItemBinarySearchTree data structure for the Item type
-package binarysearchtree
+package main
 
 import (
 	"fmt"
