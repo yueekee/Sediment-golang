@@ -24,14 +24,20 @@ import (
 // 	return time.Since(startA)
 // }
 
+var tenSecondTimeout = 10 * time.Second
+
 // 版本2: 使用select改进
 func Racer(a, b string) (string, error) {
+	return ConfigurableRacer(a, b, tenSecondTimeout)
+}
+
+func ConfigurableRacer(a, b string, timeout time.Duration) (string, error) {
 	select {
 	case <-ping(a):
 		return a, nil
 	case <-ping(b):
 		return b, nil
-	case <- time.After(10 * time.Second):
+	case <- time.After(timeout):
 		return "", fmt.Errorf("timed out waiting for %s and %s", a, b)
 	}
 }
