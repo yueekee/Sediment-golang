@@ -19,24 +19,29 @@ type PlayerServer struct {
 }
 
 func (p *PlayerServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	switch r.Method {
+	case http.MethodGet:
+		p.showScore(w, r)
+	case http.MethodPost:
+		p.processWin(w)
+	}
+	
+}
+
+func (p *PlayerServer) showScore(w http.ResponseWriter, r *http.Request) {
 	player := r.URL.Path[len("/Players/"):]
 	score := p.store.GetPlayerScore(player)
 
 	if score == 0 {
 		w.WriteHeader(http.StatusNotFound)
 	}
-	// if player == "Pepper" {
-    //     fmt.Fprint(w, "20")
-    //     return
-    // }
 
-    // if player == "Floyd" {
-    //     fmt.Fprint(w, "10")
-    //     return
-    // }
 	fmt.Fprint(w, GetPlayerScore(player))
 }
 
+func (p *PlayerServer) processWin(w http.ResponseWriter) {
+	w.WriteHeader(http.StatusAccepted)
+}
 
 // 我们把得分计算从 PlayerServer 移到函数 GetPlayerScore 中，这就是使用接口重构的正确方法。
 func GetPlayerScore(name string) string {
