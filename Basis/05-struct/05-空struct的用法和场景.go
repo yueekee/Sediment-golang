@@ -44,6 +44,18 @@ func (s Set) Exist(k string) bool {
 	return ok
 }
 
+func Scene2() {
+	set := Set{}
+	set.Append("apple")
+	set.Append("pineapple")
+	set.Append("pear")
+	fmt.Println(set)
+
+	set.Remove("apple")
+	fmt.Println(set)
+	fmt.Println(set.Exist("pear"))
+}
+
 // 3.实现空通道。（可用于流转各类状态或是控制并发情况）
 // 打印1111之后sleep一秒后再打印2222
 func Scene3() {
@@ -56,18 +68,6 @@ func Scene3() {
 	fmt.Println("1111")
 	<-ch
 	fmt.Println("2222")
-}
-
-func Scene2() {
-	set := Set{}
-	set.Append("apple")
-	set.Append("pineapple")
-	set.Append("pear")
-	fmt.Println(set)
-
-	set.Remove("apple")
-	fmt.Println(set)
-	fmt.Println(set.Exist("pear"))
 }
 
 
