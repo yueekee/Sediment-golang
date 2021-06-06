@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"sync"
 )
@@ -12,21 +13,39 @@ import (
 4.使用wait等待任务数为0时结束
 */
 
-func main1() {
+func main() {
 	waitGroup := sync.WaitGroup{}
 	waitGroup.Add(9)
+	errCh := make(chan error, 9)
+	var res []int
+
 	for i := 1; i < 10; i++ {
 		go func(wg *sync.WaitGroup, i int) {
-			fmt.Println(i)
+			fmt.Println("----i:", i)
+			if i == 10 {
+				errCh <- errors.New("错误")
+			} else {
+				res = append(res, i)
+			}
 			wg.Done()
 		}(&waitGroup, i)
 	}
+
+	v, ok := <-errCh
+	if ok {
+		fmt.Println(v.Error())
+		return
+	}
+
 	waitGroup.Wait()
+	close(errCh)
+
+	fmt.Println("res:", res)
 }
 
 // 输出为乱序的1-9位数
 
-func main() {
+func main1() {
 	ch := make(chan int)
 	for i := 1; i < 10; i++ {
 		go func(i int) {
