@@ -17,7 +17,7 @@ func main() {
 
 	// capture pdf
 	var buf []byte
-	if err := chromedp.Run(ctx, printToPDF(`http://172.16.1.120:8080/down?pid=123412341&key=1623401463256`, &buf)); err != nil {
+	if err := chromedp.Run(ctx, printToPDF(`http://172.16.1.120:8080/down?pid=123412341&key=1234123412`, &buf)); err != nil {
 		log.Fatal(err)
 	}
 
