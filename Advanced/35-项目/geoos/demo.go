@@ -12,14 +12,14 @@ func main() {
 	// First, choose the default algorithm.
 	strategy := planar.NormalStrategy()
 	// Secondly, manufacturing test data and convert it to geometry
-	const polygon = `POLYGON((-1 -1, 1 -1, 1 1, -1 1, -1 -1))`
+	const polygon = `POLYGON((-1 -1, 1 -1, 2 2, -1 1, -1 -1))`
 	geometry, _ := wkt.UnmarshalString(polygon)
 	// Last， call the Area () method and get result.
 	area, e := strategy.Area(geometry)
 	if e != nil {
 		fmt.Printf(e.Error())
 	}
-	fmt.Printf("%f", area)
+	fmt.Printf("%f\n", area)
 	// get result 4.0
 
 	rawJSON := []byte(`
