@@ -6,7 +6,9 @@ require (
 	github.com/360EntSecGroup-Skylar/excelize v1.4.1
 	github.com/360EntSecGroup-Skylar/excelize/v2 v2.4.0 // indirect
 	github.com/cheekybits/genny v1.0.0
-	github.com/chromedp/chromedp v0.7.3 // indirect
+	github.com/chromedp/cdproto v0.0.0-20210526005521-9e51b9051fd0
+	github.com/chromedp/chromedp v0.7.3
+	github.com/gin-contrib/pprof v1.3.0 // indirect
 	github.com/gin-gonic/gin v1.6.3
 	github.com/golang/protobuf v1.4.2 // indirect
 	github.com/google/go-cmp v0.5.5 // indirect

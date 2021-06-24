@@ -1,55 +1,22 @@
 package main
 
 import (
-	"context"
-	"io/ioutil"
-	"log"
-
-	"github.com/chromedp/chromedp"
+	"github.com/gin-contrib/pprof"
+	"github.com/gin-gonic/gin"
+	demo "github.com/liankui/Sediment-golang/Advanced/35-项目/chromedp/demo-检查资源占用情况"
 )
 
+// 使用 JSONP 向不同域的服务器请求数据。如果查询参数存在回调，则将回调添加到响应体中。
+// 添加一个callback的入参后，会将callback对应的参数返回出来
 func main() {
-	// create context
-	ctx, cancel := chromedp.NewContext(
-		context.Background(),
-		// chromedp.WithDebugf(log.Printf),
-	)
-	defer cancel()
+	app := gin.Default()
 
-	// capture screenshot of an element
-	var buf []byte
-	if err := chromedp.Run(ctx, elementScreenshot(`https://pkg.go.dev/`, `img.Homepage-logo`, &buf)); err != nil {
-		log.Fatal(err)
-	}
-	if err := ioutil.WriteFile("elementScreenshot.png", buf, 0o644); err != nil {
-		log.Fatal(err)
-	}
+	// pprof router
+	pprof.Register(app)
 
-	// capture entire browser viewport, returning png with quality=90
-	if err := chromedp.Run(ctx, fullScreenshot(`https://brank.as/`, 90, &buf)); err != nil {
-		log.Fatal(err)
-	}
-	if err := ioutil.WriteFile("fullScreenshot.png", buf, 0o644); err != nil {
-		log.Fatal(err)
-	}
+	app.POST("/report", demo.GetPDF) // html to pdf
 
-	log.Printf("wrote elementScreenshot.png and fullScreenshot.png")
-}
 
-// elementScreenshot takes a screenshot of a specific element.
-func elementScreenshot(urlstr, sel string, res *[]byte) chromedp.Tasks {
-	return chromedp.Tasks{
-		chromedp.Navigate(urlstr),
-		chromedp.Screenshot(sel, res, chromedp.NodeVisible),
-	}
-}
-
-// fullScreenshot takes a screenshot of the entire browser viewport.
-//
-// Note: chromedp.FullScreenshot overrides the device's emulation settings. Reset
-func fullScreenshot(urlstr string, quality int, res *[]byte) chromedp.Tasks {
-	return chromedp.Tasks{
-		chromedp.Navigate(urlstr),
-		chromedp.FullScreenshot(res, quality),
-	}
+	// 监听并在 0.0.0.0:8080 上启动服务
+	app.Run(":8082")
 }
