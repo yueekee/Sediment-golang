@@ -1,10 +1,8 @@
 package demo
 
 import (
-	"bufio"
 	"context"
 	"fmt"
-	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -65,38 +63,38 @@ func GetPDF(c *gin.Context) {
 	}
 
 	// pdf文件上传给前端
-	//bytes, err := ioutil.ReadFile(pdfPath)
+	bytes, err := ioutil.ReadFile(pdfPath)
 	//defer func() {
 	//	bytes = nil
 	//}()
 
-	f, err := os.Open(pdfPath)
-	defer f.Close()
-
-	if err != nil {
-		log.Println("err1:", err)
-	}
-
-	reader := bufio.NewReader(f)
-	var chunk []byte
-	buf := make([]byte, 1024)
-	for {
-		buf, err = reader.ReadBytes('\n') //读取到\n结束
-		if err != nil {
-			if err == io.EOF { //文件已经结束
-				break
-			}
-		}
-		chunk = append(chunk, buf...)
-	}
-	defer func() {
-		chunk = chunk[:0]
-	}()
-	//fmt.Printf("chunk:%#v\n", string(chunk))
-	fmt.Println("------------len:", len(chunk))
+	//f, err := os.Open(pdfPath)
+	//defer f.Close()
+	//
+	//if err != nil {
+	//	log.Println("err1:", err)
+	//}
+	//
+	//reader := bufio.NewReader(f)
+	//var chunk []byte
+	//buf := make([]byte, 1024)
+	//for {
+	//	buf, err = reader.ReadBytes('\n') //读取到\n结束
+	//	if err != nil {
+	//		if err == io.EOF { //文件已经结束
+	//			break
+	//		}
+	//	}
+	//	chunk = append(chunk, buf...)
+	//}
+	//defer func() {
+	//	chunk = chunk[:0]
+	//}()
+	////fmt.Printf("chunk:%#v\n", string(chunk))
+	//fmt.Println("------------len:", len(chunk))
 
 	c.Header("content-disposition", `attachment; filename=`+fileName)
-	c.Data(200, "application/pdf", chunk)
+	c.Data(200, "application/pdf", bytes)
 	c.String(http.StatusOK, "下载文件成功")
 }
 
