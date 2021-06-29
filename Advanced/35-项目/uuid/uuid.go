@@ -8,11 +8,18 @@ import (
 func main() {
 	// Creating UUID Version 4
 	// panic on error
-	u1 := uuid.Must(uuid.NewV4(), nil)
-	fmt.Printf("UUIDv4: %s\n", u1)
+	u1 := uuid.NewV1()
+	fmt.Printf("UUIDv1: %s\n", u1)
 
-	u2 := uuid.NewV4()
-	fmt.Printf("UUIDv4: %s\n", u2)
+	b := byte('l')
+	u2 := uuid.NewV2(b)
+	fmt.Printf("UUIDv2: %s\n", u2)
+
+	u3 := uuid.NewV3(u2, "123")
+	fmt.Printf("UUIDv3: %s\n", u3)
+
+	u4 := uuid.NewV4()
+	fmt.Printf("UUIDv4: %s\n", u4)
 
 	// Parsing UUID from string input
 	u2, err := uuid.FromString("6ba7b810-9dad-11d1-80b4-00c04fd430c8")

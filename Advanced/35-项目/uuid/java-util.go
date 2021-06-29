@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/google/uuid"
 	"fmt"
 )
 
@@ -16,6 +15,6 @@ func main() {
 // Generate a Version 3 UUID compatible with Java's
 // UUID.namedUUIDFromBytes() method.
 //
-func NamedUUID(data []byte) *uuid.UUID {
-	return uuid.NewMD5(nil, data)
-}
+//func NamedUUID(data []byte) *uuid.UUID {
+//	return uuid.NewMD5(nil, data)
+//}
