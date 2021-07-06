@@ -20,4 +20,5 @@ func main() {
 	var bp BodyPart
 	s := bp.String(Head)
 	fmt.Println(s)
+	g
 }
