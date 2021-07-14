@@ -26,6 +26,7 @@ function start()
 		echo "$SERVER start failed"
 		exit 1
 	fi
+
 }
 
 function status()
