@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	fileInfo, err := os.Stat("my.txt")
+	fileInfo, err := os.Stat("my1.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
